@@ -11,20 +11,20 @@ public abstract class Duck {
   @Setter
   QuackBehavior quackBehavior;
 
-	public Duck() {
-	}
+  public Duck() {
+  }
 
-	abstract void display();
+  abstract void display();
 
-	public void performFly() {
+  public void performFly() {
     this.flyBehavior.fly();
-	}
+  }
 
-	public void performQuack() {
+  public void performQuack() {
     this.quackBehavior.quack();
-	}
+  }
 
-	public void swim() {
-		System.out.println("All ducks float, even decoys!");
-	}
+  public void swim() {
+    System.out.println("All ducks float, even decoys!");
+  }
 }

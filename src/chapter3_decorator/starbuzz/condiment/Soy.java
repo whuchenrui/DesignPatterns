@@ -5,15 +5,15 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class Soy extends CondimentDecorator {
-	Beverage beverage;
+  Beverage beverage;
 
-	@Override
-	public String getDescription() {
-		return beverage.getDescription() + ", Soy";
-	}
+  @Override
+  public String getDescription() {
+    return this.beverage.getDescription() + ", Soy";
+  }
 
-	@Override
-	public double cost() {
-		return .15 + beverage.cost();
-	}
+  @Override
+  public double cost() {
+    return .15 + this.beverage.cost();
+  }
 }

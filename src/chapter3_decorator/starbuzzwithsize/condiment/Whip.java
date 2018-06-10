@@ -5,15 +5,15 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class Whip extends CondimentDecorator {
-	Beverage beverage;
+  Beverage beverage;
  
-	@Override
-	public String getDescription() {
-		return beverage.getDescription() + ", Whip";
-	}
+  @Override
+  public String getDescription() {
+    return this.beverage.getDescription() + ", Whip";
+  }
  
-	@Override
-	public double cost() {
-		return .10 + beverage.cost();
-	}
+  @Override
+  public double cost() {
+    return .10 + this.beverage.cost();
+  }
 }

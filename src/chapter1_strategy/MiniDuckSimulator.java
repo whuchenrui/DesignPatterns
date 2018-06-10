@@ -4,20 +4,20 @@ import chapter1_strategy.flybehavior.FlyRocketPowered;
 
 public class MiniDuckSimulator {
  
-	public static void main(final String[] args) {
+  public static void main(final String[] args) {
  
-		final MallardDuck	mallard = new MallardDuck();
-		final RubberDuck	rubberDuckie = new RubberDuck();
-		final DecoyDuck decoy = new DecoyDuck();
+    final MallardDuck	mallard = new MallardDuck();
+    final RubberDuck	rubberDuckie = new RubberDuck();
+    final DecoyDuck decoy = new DecoyDuck();
 
-		final Duck model = new ModelDuck();
+    final Duck model = new ModelDuck();
 
-		mallard.performQuack();
-		rubberDuckie.performQuack();
-		decoy.performQuack();
+    mallard.performQuack();
+    rubberDuckie.performQuack();
+    decoy.performQuack();
    
-		model.performFly();	
-		model.setFlyBehavior(new FlyRocketPowered());
-		model.performFly();
-	}
+    model.performFly();
+    model.setFlyBehavior(new FlyRocketPowered());
+    model.performFly();
+  }
 }

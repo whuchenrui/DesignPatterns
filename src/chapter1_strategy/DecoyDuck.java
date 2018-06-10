@@ -4,11 +4,11 @@ import chapter1_strategy.flybehavior.FlyNoWay;
 import chapter1_strategy.quackbehavior.MuteQuack;
 
 public class DecoyDuck extends Duck {
-	public DecoyDuck() {
-		setFlyBehavior(new FlyNoWay());
-		setQuackBehavior(new MuteQuack());
-	}
-	public void display() {
-		System.out.println("I'm a duck Decoy");
-	}
+  public DecoyDuck() {
+    setFlyBehavior(new FlyNoWay());
+    setQuackBehavior(new MuteQuack());
+  }
+  public void display() {
+    System.out.println("I'm a duck Decoy");
+  }
 }

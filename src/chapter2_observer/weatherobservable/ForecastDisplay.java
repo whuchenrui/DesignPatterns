@@ -4,30 +4,32 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class ForecastDisplay implements Observer, DisplayElement {
-	private float currentPressure = 29.92f;  
-	private float lastPressure;
+  private float currentPressure = 29.92f;
+  private float lastPressure;
 
-	public ForecastDisplay(Observable observable) {
-		observable.addObserver(this);
-	}
+  public ForecastDisplay(final Observable observable) {
+    observable.addObserver(this);
+  }
 
-	public void update(Observable observable, Object arg) {
-		if (observable instanceof WeatherData) {
-			WeatherData weatherData = (WeatherData)observable;
-			lastPressure = currentPressure;
-			currentPressure = weatherData.getPressure();
-			display();
-		}
-	}
+  @Override
+  public void update(final Observable observable, final Object arg) {
+    if (observable instanceof WeatherData) {
+      final WeatherData weatherData = (WeatherData)observable;
+      this.lastPressure = this.currentPressure;
+      this.currentPressure = weatherData.getPressure();
+      this.display();
+    }
+  }
 
-	public void display() {
-		System.out.print("Forecast: ");
-		if (currentPressure > lastPressure) {
-			System.out.println("Improving weather on the way!");
-		} else if (currentPressure == lastPressure) {
-			System.out.println("More of the same");
-		} else if (currentPressure < lastPressure) {
-			System.out.println("Watch out for cooler, rainy weather");
-		}
-	}
+  @Override
+  public void display() {
+    System.out.print("Forecast: ");
+    if (this.currentPressure > this.lastPressure) {
+      System.out.println("Improving weather on the way!");
+    } else if (this.currentPressure == this.lastPressure) {
+      System.out.println("More of the same");
+    } else if (this.currentPressure < this.lastPressure) {
+      System.out.println("Watch out for cooler, rainy weather");
+    }
+  }
 }

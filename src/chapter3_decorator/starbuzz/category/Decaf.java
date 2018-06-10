@@ -4,7 +4,7 @@ import chapter3_decorator.starbuzz.Beverage;
 
 public class Decaf extends Beverage {
   public Decaf() {
-	  description = "Decaf Coffee";
+    this.description = "Decaf Coffee";
   }
  
   @Override
